@@ -8,7 +8,11 @@ on:
 
   # Allow manual workflow trigger
   workflow_dispatch:
-
+  
+permissions:
+ id-token: write # This is required for requesting the JWT
+ contents: read # This is required for actions/checkout
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -75,7 +79,7 @@ jobs:
       - name: 🗝️ Azure Login
         uses: azure/login@v1
         with:
-          # creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
