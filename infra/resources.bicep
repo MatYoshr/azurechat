@@ -28,9 +28,9 @@ param gptvisionModelVersion string = 'vision-preview'
 
 param speechServiceSkuName string = 'S0'
 
-param formRecognizerSkuName string = 'S0'
+param formRecognizerSkuName string = 'F0'
 
-param searchServiceSkuName string = 'standard'
+param searchServiceSkuName string = 'Free'
 param searchServiceIndexName string = 'azure-chat'
 
 param storageServiceSku object
